@@ -25,7 +25,7 @@
 */
 #include <cv.hpp>
 //#include <highgui.hpp>
-#include <core.hpp>
+//#include <core.hpp>
 
 #include <random>
 #include <iostream>
