@@ -1,6 +1,7 @@
 # Quaternion
 A Quaternion class that implements general functionality with focus on the Modified Rodrigues Parametrization (MRPs) 
 
+
 ## Description
 This is a Quaternion class (`Quaternion.h`) that implements standard functionality such as quaternin products, conversions from unit quaternions to rotation matrices vice versa, elementary interpolation (_SLERP_) differentiation (in terms of _axis-angle_ and _modified Rodrigues_ parameters) and all typical operations (_addition_, _quaternion multiplication_, _scalar multiplication_). The class is fully templated in terms of precision, so it can automatically handle conversions in operations or initializations from other quaternion objects or variables in different precision.
 
