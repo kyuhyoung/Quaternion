@@ -67,7 +67,7 @@ double SquaredError(const cv::Matx<double, 3, 3> &X, const std::vector<cv::Matx<
   return sum;
 }
 
-cv::Mat compute_average_rotation_by_optimizing(const std::vector<cv::Mat>& vt_rot, int max_iter, double th_errorsq, double damping_factor)
+cv::Mat rotation_averaging_by_optimizing(const std::vector<cv::Mat>& vt_rot, int max_iter, double th_errorsq, double damping_factor)
 {
     int N = vt_rot.size();
     if(0 == N) 
@@ -228,10 +228,10 @@ int main()
     // add it to the data
     data.push_back(R_noisy);
     
-  }
+    }
     std::vector<cv::Mat> vt_rot(N);
-    for (int i = 0; i < N; i++) vt_rot[i] = cv::Mat(data[i]); 
-    compute_average_rotation_by_optimizing(vt_rot, 30, 1e-8, 0.01);
+    for (int i = 0; i < N; i++ ) vt_rot[i] = cv::Mat(data[i]); 
+    cv::Mat rot_avg = rotation_averaging_by_optimizing(vt_rot, 30, 1e-8, 0.01);
   // Done generating data!
   
   // //////////// Solving the simplest rotation averaging problem : ///////////////////
